@@ -23,12 +23,18 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "chai": "^4.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "react-test-renderer": "^16.5.2"
+    "react-test-renderer": "^16.5.2",
+    "selenium-standalone": "^6.15.3",
+    "wdio-dot-reporter": "0.0.10",
+    "wdio-mocha-framework": "^0.6.3",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "webdriverio": "^4.13.2"
   }
 }

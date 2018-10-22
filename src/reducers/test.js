@@ -1,4 +1,5 @@
 /* global expect, it, describe */
+
 import types from '../constants';
 import { reducer, initialState } from '.';
 
@@ -24,7 +25,9 @@ describe('Reducer', () => {
             text: todoText,
           },
         ],
+        deleted: {},
       };
+
       expect(reducer(undefined, action)).toEqual(expectedState);
     });
   });
@@ -46,8 +49,40 @@ describe('Reducer', () => {
 
     const expectedState = {
       todos: [],
+      deleted: {
+        id: 1,
+        text: todoText,
+      },
     };
 
     expect(reducer(startingState, action)).toEqual(expectedState);
+  });
+
+  describe('Undelete todo', () => {
+    it('Should return the correct state', () => {
+      const startingState = {
+        todos: [],
+        deleted: {
+          id: 1,
+          text: todoText,
+        },
+      };
+
+      const action = {
+        type: types.UNDELETE_TODO,
+      };
+
+      const expectedState = {
+        todos: [
+          {
+            id: 1,
+            text: todoText,
+          },
+        ],
+        deleted: {},
+      };
+
+      expect(reducer(startingState, action)).toEqual(expectedState);
+    });
   });
 });

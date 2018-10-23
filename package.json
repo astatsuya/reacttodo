@@ -1,6 +1,7 @@
 {
   "name": "reacttodo",
   "version": "0.1.0",
+  "homepage": "http://astatsuya.github.io/react-todo",
   "private": true,
   "dependencies": {
     "express": "^4.16.4",
@@ -11,6 +12,7 @@
     "redux": "^4.0.1"
   },
   "scripts": {
+    "deploy": "npm run build && gh-pages -d build",
     "selenium-setup": "selenium-standalone install",
     "selenium-start": "selenium-standalone start",
     "e2e-tests": "wdio wdio.conf.js",
@@ -19,8 +21,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,5 +48,4 @@
     "wdio-selenium-standalone-service": "0.0.10",
     "webdriverio": "^4.13.2"
   },
-  "homepage": "http://astatsuya.github.io/react-todo"
 }
